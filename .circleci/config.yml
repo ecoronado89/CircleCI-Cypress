@@ -34,6 +34,7 @@ workflows:
           parallel: true # load balance all tests
           parallelism: 3 # across 3 machines
           group: '3x-electron' # name this group
+          start: 'npm run cy:run'
 
       # run on 2 machines using Chrome browser
       - cypress/run:
@@ -50,6 +51,7 @@ workflows:
           parallel: true
           parallelism: 2
           group: '2x-chrome'
+          start: 'npm run cy:run'
 
       - release:
           filters:
