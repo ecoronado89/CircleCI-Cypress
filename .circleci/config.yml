@@ -7,6 +7,6 @@ orbs:
         - checkout
         - run: npm install
         - run: npm test
-        - cypress/run
+        - cypress/run:
             parallel: true
             parallelism: 4
