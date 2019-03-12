@@ -1,11 +1,12 @@
 version: 2
-jobs:
-  build: 
-    working_directory: ~/temp
-    docker: 
-      - image: cypress/base:8
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm test
-      - run: npm run cy:run  
+orbs:
+  cypress: cypress-io/cypress@1.1.0
+  workflows:
+    build:
+      jobs:
+        - checkout
+        - run: npm install
+        - run: npm test
+        - cypress/run
+            parallel: true
+            parallelism: 4
