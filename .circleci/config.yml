@@ -11,5 +11,5 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: npm test
+          command: npm install
       - run: $(npm bin)/cypress run --record --key 61438722-6e7b-47c2-86c2-81374b63349b --parallel
